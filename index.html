@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Feedback Form</h2>
+        <form class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name (Optional):</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email (Optional):</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone (Optional):</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a valid phone number.</div>
+            </div>
+            <div class="mb-3">
+                <label for="rating" class="form-label">Rating:</label>
+                <select class="form-select" id="rating" name="rating" required>
+                    <option value="" disabled selected>Select Rating</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+                <div class="invalid-feedback">Please select a rating.</div>
+            </div>
+            <div class="mb-3">
+                <label for="questions" class="form-label">Any Questions regarding product or service:</label>
+                <textarea class="form-control" id="questions" name="questions" rows="4" required placeholder="Enter your questions here"></textarea>
+                <div class="invalid-feedback">Please enter your questions.</div>
+            </div>
+            <div class="mb-3">
+                <label for="comments" class="form-label">Additional Comments (Optional):</label>
+                <textarea class="form-control" id="comments" name="comments" rows="4" placeholder="Enter your comments here"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+    <!-- Form Validation Script -->
+    <script>
+        (function () {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+</html>
